@@ -1,0 +1,3 @@
+Este projecto tiene como finalidad practicar programcion orientada a objetos.
+
+En este caso voy a creara serie de clases que va a haer de carrito de compras
