@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Personas</title>
+    <title>Mostrar Personas</title>
 </head>
 <body>
-    <h1>Lista de Personas</h1>
-    <ul>
-        {% for person in persons %}
-        <li>{{ person.first_name }} {{ person.last_name }}</li>
-        {% endfor %}
-    </ul>
+    <form method="post" action="{% url 'mostrar_personas' %}">
+        {% csrf_token %}
+        <button type="submit">Mostrar Personas</button>
+    </form>
+
+    {% if persons %}
+        <h1>Personas:</h1>
+        <ul>
+            {% for person in persons %}
+                <li>{{ person.first_name }} {{ person.last_name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>
-
-    
