@@ -1,16 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Person
+
 
 # Create your views here.
 
-
+def home(request):
+    return render(request, 'home.html')
 
 def mostrar_personas(request):
-    if request.method == 'POST':
-        persons = Person.objects.all()
-        return render(request, 'mostrar_personas.html', {'persons': persons})
+    persons = Person.objects.all()
+    return render(request, 'mostrar_personas.html', {'persons': persons})
+
+
     
-    return render(request, 'mostrar_personas.html')
 
 def hello_world(request):
     
