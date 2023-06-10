@@ -8,6 +8,9 @@ def home(request):
     return render(request, 'home.html')
 
 def mostrar_personas(request):
+    persons = Person.objects.create(first_name='John', last_name='Doe')
+    persons.foto_perfil = 'C:/Users/julian/Pictures/8a9f828a1371f54eca195e3d31a8d39c.jpg'
+    persons.save()
     persons = Person.objects.all()
     return render(request, 'mostrar_personas.html', {'persons': persons})
 

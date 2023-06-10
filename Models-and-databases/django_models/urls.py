@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from person_info import views
+# Para la configuracion media url.
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('personas/', views.mostrar_personas, name='mostrar_personas'),
     path('home/', views.home, name='home_page'),
     path('hello_world/', views.hello_world, name='hello_world'),
-
-]
+# agrega la configuracion:media_url.Esto permitirá que Django sirva los archivos de medios correctamente en tu aplicación.
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

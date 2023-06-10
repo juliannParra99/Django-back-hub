@@ -8,6 +8,7 @@
     <ul>
       {% for person in persons %}
       <li>{{ person.first_name }} {{ person.last_name }}</li>
+      <img src="{{ person.foto_perfil.url }}" alt="">
       {% endfor %}
     </ul>
   </body>
